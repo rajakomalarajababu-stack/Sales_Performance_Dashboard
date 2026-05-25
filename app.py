@@ -119,9 +119,35 @@ top = data.groupby(
     "Product"
 )["Revenue"].sum()
 
-st.write(
-    "Top Product:",
-    top.idxmax()
+top_product = top.idxmax()
+
+st.markdown(
+f"""
+<div style="
+background: linear-gradient(
+90deg,
+#4CAF50,
+#2196F3
+);
+padding:20px;
+border-radius:15px;
+text-align:center;
+color:white;
+font-size:24px;
+font-weight:bold;
+box-shadow:2px 2px 10px gray;
+margin-top:20px;
+">
+
+🏆 TOP SELLING PRODUCT
+
+<br>
+
+💻 {top_product}
+
+</div>
+""",
+unsafe_allow_html=True
 )
 region = st.selectbox(
     "Select Region",
