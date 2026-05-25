@@ -97,7 +97,6 @@ color_discrete_sequence=
 px.colors.qualitative.Set3
 )
 
-st.plotly_chart(fig)
 
 trend = px.line(
 data,
